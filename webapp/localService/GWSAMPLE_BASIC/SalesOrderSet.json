@@ -1,0 +1,383 @@
+{
+  "d" : {
+	"results" : [
+	  {
+		"__metadata" : {
+		  "id" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000000')",
+		  "uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000000')",
+		  "type" : "GWSAMPLE_BASIC.SalesOrder"
+		},
+        "DynamicSubTitle":"Per supplier",
+		"SalesOrderID" : "0500000000",
+		"SalesOrderGuid" : "0050568D-393C-1EE4-9882-CEC33E151000",
+		"Note" : "EPM DG: SO ID 0500000000 Deliver as fast as possible",
+		"NoteLanguage" : "E",
+		"CustomerID" : "0100000000",
+		"CustomerName" : "SAP",
+		"Supplier_Name" : "Robert Brown Entertainment",
+		"LegalFormName": "Aktiengesetz",
+		"CurrencyCode" : "EUR",
+		"GrossAmount" : 25867.03,
+		"NetAmount" : 21737.0,
+		"ContractAmount" : 21737.0,
+		"TaxAmount" : 43.03,
+		"LifecycleStatus" : "3",
+		"LifecycleStatusDescription" : "Approved",
+		"BillingStatus" : "",
+		"BillingStatusDescription" : "Initial",
+		"DeliveryStatus" : "",
+		"DeliveryStatusDescription" : "Initial",
+		"ValidFrom" : "\/Date(1498847400000)\/",
+		"ValidTo" : "\/Date(1536517800000)\/",
+		"ValidToDate" : "3 months",
+		"CreatedAt" : "\/Date(1493663400000+0330)\/",
+		"ChangedAt" : "\/Date(1414623600000)\/",
+		"ToBusinessPartner" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000000')/ToBusinessPartner"
+		  }
+		},
+		"ToLineItems" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000000')/ToLineItems"
+		  }
+		}
+	  },
+	  {
+		"__metadata" : {
+		  "id" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000001')",
+		  "uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000001')",
+		  "type" : "GWSAMPLE_BASIC.SalesOrder"
+		},
+        "DynamicSubTitle":"Per Customer",
+		"SalesOrderID" : "0500000001",
+		"SalesOrderGuid" : "0050568D-393C-1EE4-9882-CEC33E151001",
+		"Note" : "EPM DG: SO ID 0500000001 Deliver as fast as possible",
+		"NoteLanguage" : "E",
+		"CustomerID" : "0100000001",
+		"CustomerName" : "DelBont Industries",
+		"Supplier_Name" : "SAP",
+		"LegalFormName": "Gesellschaft mit beschränkter Haftung",
+		"CurrencyCode" : "EUR",
+		"GrossAmount" : 14602.49,
+		"NetAmount" : 12271.0,
+		"ContractAmount" : 12271.0,
+		"TaxAmount" : 33.49,
+		"LifecycleStatus" : "1",
+		"LifecycleStatusDescription" : "Rejected",
+		"BillingStatus" : "",
+		"BillingStatusDescription" : "Initial",
+		"DeliveryStatus" : "",
+		"DeliveryStatusDescription" : "Initial",
+        "ValidFrom" : "\/Date(1499193000000)\/",
+        "ValidTo" : "\/Date(1530556200000)\/",
+        "ValidToDate" : "7 months",
+		"CreatedAt" : "\/Date(1494441000000+0330)\/",
+		"ChangedAt" : "\/Date(1414623600000)\/",
+		"ToBusinessPartner" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000001')/ToBusinessPartner"
+		  }
+		},
+		"ToLineItems" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000001')/ToLineItems"
+		  }
+		}
+	  },
+	  {
+		"__metadata" : {
+		  "id" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000002')",
+		  "uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000002')",
+		  "type" : "GWSAMPLE_BASIC.SalesOrder"
+		},
+        "DynamicSubTitle":"Per Customer",
+		"SalesOrderID" : "0500000002",
+		"SalesOrderGuid" : "0050568D-393C-1EE4-9882-CEC33E151002",
+		"Note" : "EPM DG: SO ID 0500000002 Deliver as fast as possible",
+		"NoteLanguage" : "E",
+		"CustomerID" : "0100000002",
+		"CustomerName" : "TECUM",
+		"Supplier_Name" : "Becker Berlin",
+		"LegalFormName": "The Limited Company",
+		"CurrencyCode" : "EUR",
+		"GrossAmount" : 95631.08,
+		"NetAmount" : 84732.0,
+		"ContractAmount" : 84732.0,
+		"TaxAmount" : 83.08,
+		"LifecycleStatus" : "3",
+		"LifecycleStatusDescription" : "Approved",
+		"BillingStatus" : "",
+		"BillingStatusDescription" : "Initial",
+		"DeliveryStatus" : "",
+		"DeliveryStatusDescription" : "Initial",
+        "ValidFrom" : "\/Date(1497637800000)\/",
+        "ValidTo" : "\/Date(1526668200000)\/",
+        "ValidToDate" : "4 months",
+		"CreatedAt" : "\/Date(1496082600000+0330)\/",
+		"ChangedAt" : "\/Date(1414623600000)\/",
+		"ToBusinessPartner" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000002')/ToBusinessPartner"
+		  }
+		},
+		"ToLineItems" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000002')/ToLineItems"
+		  }
+		}
+	  },
+	  {
+		"__metadata" : {
+		  "id" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000003')",
+		  "uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000003')",
+		  "type" : "GWSAMPLE_BASIC.SalesOrder"
+		},
+        "DynamicSubTitle":"Per Customer",
+		"SalesOrderID" : "0500000003",
+		"SalesOrderGuid" : "0050568D-393C-1EE4-9882-CEC33E151003",
+		"Note" : "EPM DG: SO ID 0500000003 Deliver as fast as possible and some long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text ",
+		"NoteLanguage" : "E",
+		"CustomerID" : "0100000003",
+		"CustomerName" : "Asia High tech",
+		"Supplier_Name" : "DelBont Industries",
+		"LegalFormName": "Gesellschaft mit beschränkter Haftung",
+		"CurrencyCode" : "EUR",
+		"GrossAmount" : 31704.04,
+		"NetAmount" : 16431.97,
+		"ContractAmount" : 16431.97,
+		"TaxAmount" : 27.07,
+		"LifecycleStatus" : "2",
+		"LifecycleStatusDescription" : "Pending",
+		"BillingStatus" : "",
+		"BillingStatusDescription" : "Initial",
+		"DeliveryStatus" : "",
+		"DeliveryStatusDescription" : "Initial",
+        "ValidFrom" : "\/Date(1498761000000)\/",
+        "ValidTo" : "\/Date(1529346600000)\/",
+        "ValidToDate" : "11 months",
+		"CreatedAt" : "\/Date(1496341800000+0330)\/",
+		"ChangedAt" : "\/Date(1414623600000)\/",
+		"ToBusinessPartner" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000003')/ToBusinessPartner"
+		  }
+		},
+		"ToLineItems" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000003')/ToLineItems"
+		  }
+		}
+	  },
+	  {
+		"__metadata" : {
+		  "id" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000004')",
+		  "uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000004')",
+		  "type" : "GWSAMPLE_BASIC.SalesOrder"
+		},
+        "DynamicSubTitle":"Per Customer",
+		"SalesOrderID" : "0500000004",
+		"SalesOrderGuid" : "0050568D-393C-1EE4-9882-CEC33E151004",
+		"Note" : "EPM DG: SO ID 0500000004 Deliver as fast as possible",
+		"NoteLanguage" : "E",
+		"CustomerID" : "0100000004",
+		"CustomerName" : "Laurent",
+		"Supplier_Name" : "Talpa",
+		"LegalFormName": "Incorporation Services",
+		"CurrencyCode" : "EUR",
+		"GrossAmount" : 7361.24,
+		"NetAmount" : 6391.7,
+		"ContractAmount" : 6391.7,
+		"TaxAmount" : 12.54,
+		"LifecycleStatus" : "1",
+		"LifecycleStatusDescription" : "Rejected",
+		"BillingStatus" : "",
+		"BillingStatusDescription" : "Initial",
+		"DeliveryStatus" : "",
+		"DeliveryStatusDescription" : "Initial",
+        "ValidFrom" : "\/Date(1496082600000)\/",
+        "ValidTo" : "\/Date(1522780200000)\/",
+        "ValidToDate" : "2 months",
+		"CreatedAt" : "\/Date(1497637800000+0330)\/",
+		"ChangedAt" : "\/Date(1414623600000)\/",
+		"ToBusinessPartner" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000004')/ToBusinessPartner"
+		  }
+		},
+		"ToLineItems" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000004')/ToLineItems"
+		  }
+		}
+	  },
+	  {
+		"__metadata" : {
+		  "id" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000005')",
+		  "uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000005')",
+		  "type" : "GWSAMPLE_BASIC.SalesOrder"
+		},
+        "DynamicSubTitle":"Per Customer",
+		"SalesOrderID" : "0500000005",
+		"SalesOrderGuid" : "0050568D-393C-1EE4-9882-CEC33E151005",
+		"Note" : "EPM DG: SO ID 0500000005 Deliver as fast as possible",
+		"NoteLanguage" : "E",
+		"CustomerID" : "0100000005",
+		"CustomerName" : "AVANTEL",
+		"Supplier_Name" : "Panorama Studios",
+		"LegalFormName": "Aktiengesetz",
+		"CurrencyCode" : "EUR",
+		"GrossAmount" : 101299.22,
+		"NetAmount" : 85125.4,
+		"ContractAmount" : 85125.4,
+		"TaxAmount" : 61,
+		"LifecycleStatus" : "2",
+		"LifecycleStatusDescription" : "Pending",
+		"BillingStatus" : "",
+		"BillingStatusDescription" : "Initial",
+		"DeliveryStatus" : "",
+		"DeliveryStatusDescription" : "Initial",
+        "ValidFrom" : "\/Date(1499020200000)\/",
+        "ValidTo" : "\/Date(1525026600000)\/",
+        "ValidToDate" : "10 months",
+		"CreatedAt" : "\/Date(1498761000000+0330)\/",
+		"ChangedAt" : "\/Date(1414623600000)\/",
+		"ToBusinessPartner" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000005')/ToBusinessPartner"
+		  }
+		},
+		"ToLineItems" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000005')/ToLineItems"
+		  }
+		}
+	  },
+	  {
+		"__metadata" : {
+		  "id" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000006')",
+		  "uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000006')",
+		  "type" : "GWSAMPLE_BASIC.SalesOrder"
+		},
+        "DynamicSubTitle":"Per Customer",
+		"SalesOrderID" : "0500000006",
+		"SalesOrderGuid" : "0050568D-393C-1EE4-9882-CEC33E151006",
+		"Note" : "EPM DG: SO ID 0500000006 Deliver as fast as possible",
+		"NoteLanguage" : "E",
+		"CustomerID" : "0100000006",
+		"CustomerName" : "Talpa",
+		"Supplier_Name" : "TECUM",
+		"LegalFormName": "Incorporation Services",
+		"CurrencyCode" : "EUR",
+		"GrossAmount" : 25400.73,
+		"NetAmount" : 21090.7,
+		"ContractAmount" : 21090.7,
+		"TaxAmount" : 91,
+		"LifecycleStatus" : "3",
+		"LifecycleStatusDescription" : "Approved",
+		"BillingStatus" : "",
+		"BillingStatusDescription" : "Initial",
+		"DeliveryStatus" : "",
+		"DeliveryStatusDescription" : "Initial",
+        "ValidFrom" : "\/Date(1493663400000)\/",
+        "ValidTo" : "\/Date(1525026600000)\/",
+        "ValidToDate" : "5 months",
+		"CreatedAt" : "\/Date(1498847400000+0330)\/",
+		"ChangedAt" : "\/Date(1414623600000)\/",
+		"ToBusinessPartner" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000006')/ToBusinessPartner"
+		  }
+		},
+		"ToLineItems" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000006')/ToLineItems"
+		  }
+		}
+	  },
+	  {
+		"__metadata" : {
+		  "id" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000007')",
+		  "uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000007')",
+		  "type" : "GWSAMPLE_BASIC.SalesOrder"
+		},
+        "DynamicSubTitle":"Per Customer",
+		"SalesOrderID" : "0500000007",
+		"SalesOrderGuid" : "0050568D-393C-1EE4-9882-CEC33E151007",
+		"Note" : "EPM DG: SO ID 0500000007 Deliver as fast as possible",
+		"NoteLanguage" : "E",
+		"CustomerID" : "0100000007",
+		"CustomerName" : "Panorama Studios",
+		"Supplier_Name" : "SAP",
+		"LegalFormName": "Sociedade Anónima",
+		"CurrencyCode" : "EUR",
+		"GrossAmount" : 10311.35,
+		"NetAmount" : 8665.0,
+		"ContractAmount" : 8665.0,
+		"TaxAmount" : 87,
+		"LifecycleStatus" : "1",
+		"LifecycleStatusDescription" : "Rejected",
+		"BillingStatus" : "",
+		"BillingStatusDescription" : "Initial",
+		"DeliveryStatus" : "",
+		"DeliveryStatusDescription" : "Initial",
+        "ValidFrom" : "\/Date(1496341800000)\/",
+        "ValidTo" : "\/Date(1550169000000)\/",
+        "ValidToDate" : "8 months",
+		"CreatedAt" : "\/Date(1499020200000+0330)\/",
+		"ChangedAt" : "\/Date(1414623600000)\/",
+		"ToBusinessPartner" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000007')/ToBusinessPartner"
+		  }
+		},
+		"ToLineItems" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000007')/ToLineItems"
+		  }
+		}
+	  },
+	  {
+		"__metadata" : {
+		  "id" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000008')",
+		  "uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000008')",
+		  "type" : "GWSAMPLE_BASIC.SalesOrder"
+		},
+        "DynamicSubTitle":"Per Customer",
+		"SalesOrderID" : "0500000008",
+		"SalesOrderGuid" : "0050568D-393C-1EE4-9882-CEC33E151008",
+		"Note" : "EPM DG: SO ID 0500000008 Deliver as fast as possible",
+		"NoteLanguage" : "E",
+		"CustomerID" : "0100000008",
+		"CustomerName" : "Telecomunicaciones Star",
+		"Supplier_Name" : "SAP",
+		"LegalFormName": "Sociedade Anónima",
+		"CurrencyCode" : "EUR",
+		"GrossAmount" : 19895.16,
+		"NetAmount" : 16474.0,
+		"ContractAmount" : 16474.0,
+		"TaxAmount" : 97,
+		"LifecycleStatus" : "3",
+		"LifecycleStatusDescription" : "Approved",
+		"BillingStatus" : "",
+		"BillingStatusDescription" : "Initial",
+		"DeliveryStatus" : "",
+		"DeliveryStatusDescription" : "Initial",
+        "ValidFrom" : "\/Date(1494441000000)\/",
+        "ValidTo" : "\/Date(1514572200000)\/",
+        "ValidToDate" : "7 months",
+		"CreatedAt" : "\/Date(1499279400000+0330)\/",
+		"ChangedAt" : "\/Date(1414623600000)\/",
+		"ToBusinessPartner" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000008')/ToBusinessPartner"
+		  }
+		},
+		"ToLineItems" : {
+		  "__deferred" : {
+			"uri" : "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/SalesOrderSet('0500000008')/ToLineItems"
+		  }
+		}
+	  }]
+  }
+}

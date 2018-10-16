@@ -1,0 +1,2546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+   <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+      <edmx:Include Namespace="Org.OData.Capabilities.V1" />
+   </edmx:Reference>
+   <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+      <edmx:Include Namespace="Org.OData.Core.V1" />
+   </edmx:Reference>
+   <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+      <edmx:Include Namespace="com.sap.vocabularies.Common.v1" />
+   </edmx:Reference>
+   <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+      <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" />
+   </edmx:Reference>
+   <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+      <edmx:Include Namespace="Org.OData.Measures.V1" />
+   </edmx:Reference>
+   <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+      <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+   </edmx:Reference>
+   <edmx:Reference Uri="/sap/opu/odata/IWBEP/GWSAMPLE_BASIC">
+      <edmx:Include Namespace="GWSAMPLE_BASIC" />
+   </edmx:Reference>
+   <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Aggregation.V1.xml">
+      <edmx:Include Alias="Aggregation" Namespace="Org.OData.Aggregation.V1" />
+   </edmx:Reference>
+   <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Authorization.V1.xml">
+      <edmx:Include Alias="Auth" Namespace="Org.OData.Authorization.V1" />
+   </edmx:Reference>
+   <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Validation.V1.xml">
+      <edmx:Include Alias="Validation" Namespace="Org.OData.Validation.V1" />
+   </edmx:Reference>
+   <edmx:DataServices>
+      <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="zanno4sample_anno_mdl.v1">
+         <Annotations Target="GWSAMPLE_BASIC.GlobalFilters">
+            <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast" />
+            <Annotation Term="UI.SelectionFields">
+               <Collection>
+                  <Record>
+                     <PropertyPath>SupplierName</PropertyPath>
+                  </Record>
+                  <Record>
+                     <PropertyPath>Land1</PropertyPath>
+                  </Record>
+                  <Record>
+                     <PropertyPath>MaterialName</PropertyPath>
+                  </Record>
+                  <Record>
+                     <PropertyPath>MaterialGroup</PropertyPath>
+                  </Record>
+                  <Record>
+                     <PropertyPath>PurchasingCategory</PropertyPath>
+                  </Record>
+                  <Record>
+                     <PropertyPath>PurchasingGroup</PropertyPath>
+                  </Record>
+                  <Record>
+                     <PropertyPath>PurchasingOrganization</PropertyPath>
+                  </Record>
+               </Collection>
+            </Annotation>
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.GlobalFilters/SupplierName">
+            <Annotation Term="com.sap.vocabularies.Common.v1.FilterDefaultValue" String="SAP" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.GlobalFilters/Land1">
+            <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+               <Record>
+                  <PropertyValue Property="Label" String="Country Code" />
+                  <PropertyValue Property="CollectionPath" String="VH_CountrySet" />
+                  <PropertyValue Property="SearchSupported" Bool="true" />
+                  <PropertyValue Property="Parameters">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                           <PropertyValue Property="LocalDataProperty" PropertyPath="Land1" />
+                           <PropertyValue Property="ValueListProperty" String="Land1" />
+                        </Record>
+                        <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                           <PropertyValue Property="ValueListProperty" String="Natio" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.VH_Country/Land1">
+            <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="Natio">
+               <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextFirst" />
+            </Annotation>
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.Product/WeightMeasure">
+            <Annotation Term="Org.OData.Measures.V1.Unit" Path="WeightUnit" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.Product/Width">
+            <Annotation Term="Org.OData.Measures.V1.Unit" Path="DimUnit" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.Product1/Price">
+            <Annotation Term="Org.OData.Measures.V1.Unit" String="%" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.Product/Height">
+            <Annotation Term="Org.OData.Measures.V1.Unit" Path="DimUnit" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.Product/Price">
+            <Annotation Term="Org.OData.Measures.V1.ISOCurrency" Path="CurrencyCode" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.Product/Category">
+            <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+               <Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+                  <PropertyValue Property="CollectionPath" String="VH_CategorySet" />
+                  <PropertyValue Property="Parameters">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                           <PropertyValue Property="LocalDataProperty" Path="Category" />
+                           <PropertyValue Property="ValueListProperty" Path="Category" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.GlobalFilters/SupplierName">
+            <Annotation Term="com.sap.vocabularies.Common.v1.SemanticObject" String="Supplier" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder/CustomerName">
+            <Annotation Term="com.sap.vocabularies.Common.v1.SemanticObject" String="OVP" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder/SalesOrderID">
+            <Annotation Term="com.sap.vocabularies.Common.v1.SemanticObject" String="OVP" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder/SalesOrderID">
+            <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="Supplier_Name" />
+            <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextSeparate" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.BusinessPartner/FullName">
+            <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="ToBusinessPartner/Title" />
+            <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder/CustomerID">
+            <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="Supplier_Name" />
+            <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder/Supplier_Name">
+            <Annotation Term="com.sap.vocabularies.Common.v1.SemanticObject" String="Supplier" />
+            <Annotation Term="com.sap.vocabularies.Common.v1.SemanticObjectMapping">
+               <Collection>
+                  <Record>
+                     <PropertyValue Property="LocalProperty" PropertyPath="Supplier_Name" />
+                     <PropertyValue Property="SemanticObjectProperty" String="SupplierName" />
+                  </Record>
+               </Collection>
+            </Annotation>
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.Product">
+            <Annotations Target="GWSAMPLE_BASIC.Product/Name">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="TypeCode">
+                  <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast" />
+               </Annotation>
+            </Annotations>
+            <Annotations Target="GWSAMPLE_BASIC.Product/Description">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="CurrencyCode">
+                  <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast" />
+               </Annotation>
+            </Annotations>
+            <Annotation Term="com.sap.vocabularies.Communication.v1.Contact">
+               <Record>
+                  <PropertyValue Property="fn" Path="Products" />
+                  <PropertyValue Property="title" Path="Name" />
+                  <PropertyValue Property="org" Path="Description" />
+                  <PropertyValue Property="role" Path="Description" />
+                  <!-- <PropertyValue Property="photo" Path="Photo" />-->
+                  <PropertyValue Property="tel">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="type" EnumMember="com.sap.vocabularies.Communication.v1.PhoneType/fax" />
+                           <PropertyValue Property="uri" Path="Note" />
+                        </Record>
+                        <Record>
+                           <PropertyValue Property="type" EnumMember="com.sap.vocabularies.Communication.v1.PhoneType/work com.sap.vocabularies.Communication.v1.PhoneType/pref" />
+                           <PropertyValue Property="uri" Path="NoteLanguage" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+                  <PropertyValue Property="email">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="type" EnumMember="com.sap.vocabularies.Communication.v1.ContactInformationType/pref com.sap.vocabularies.Communication.v1.ContactInformationType/work" />
+                           <PropertyValue Property="address" Path="SupplierID" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo" Qualifier="header1">
+               <Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+                  <PropertyValue Property="TypeName" String="Product" />
+                  <PropertyValue Property="TypeNamePlural" String="Products" />
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Product Name" />
+                        <PropertyValue Property="Value" Path="Name" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="Description">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Product Description" />
+                        <PropertyValue Property="Value" Path="Description" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="TypeImageUrl" Path="ImageUrl" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo">
+               <Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+                  <PropertyValue Property="TypeName" String="Product" />
+                  <PropertyValue Property="TypeNamePlural" String="Products" />
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Product Name" />
+                        <PropertyValue Property="Value" Path="Name" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo" Qualifier="header2">
+               <Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+                  <PropertyValue Property="TypeName" String="Product" />
+                  <PropertyValue Property="TypeNamePlural" String="Products" />
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Product Name" />
+                        <PropertyValue Property="Value" Path="Name" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="ImageUrl" String="http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Badge">
+               <Record Type="com.sap.vocabularies.UI.v1.BadgeType">
+                  <PropertyValue Property="HeadLine" Path="ProductID" />
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Product Name" />
+                        <PropertyValue Property="Value" Path="Name" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="MainInfo">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Price" />
+                        <PropertyValue Property="Value" Path="Price" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="SecondaryInfo">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Dimensions" />
+                        <PropertyValue Property="Value">
+                           <Apply Function="odata.concat">
+                              <Path>Width</Path>
+                              <String>/</String>
+                              <Path>Depth</Path>
+                              <String>/</String>
+                              <Path>Height</Path>
+                           </Apply>
+                        </PropertyValue>
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="Price">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Unit Price" />
+                  <PropertyValue Property="Description" Path="Name" />
+                  <PropertyValue Property="Value" Path="Price" />
+                  <PropertyValue Property="ValueFormat">
+                     <Record Type="com.sap.vocabularies.UI.v1.NumberFormat">
+                        <!--<PropertyValue Property="ScaleFactor" Decimal="1000"/>-->
+                        <PropertyValue Property="NumberOfFractionalDigits" Int="1" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="Stock_Availibility">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Stock Availibility" />
+                  <PropertyValue Property="Description" Path="Name" />
+                  <PropertyValue Property="Value" Path="Availability_Status" />
+                  <PropertyValue Property="Criticality" Path="StatusCriticality" />
+                  <!--<PropertyValue Property="ValueFormat">
+                            <Record Type="com.sap.vocabularies.UI.v1.NumberFormat">
+                                <PropertyValue Property="ScaleFactor" Decimal="1000"/>
+                                <PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+                            </Record>
+                        </PropertyValue>-->
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="WeightMeasure">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Weight" />
+                  <PropertyValue Property="Description" Path="Name" />
+                  <PropertyValue Property="Value" Path="WeightMeasure" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="Depth">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Depth" />
+                  <PropertyValue Property="Description" Path="Name" />
+                  <PropertyValue Property="Value" Path="Depth" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Identification">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation">
+                     <PropertyValue Property="SemanticObject" String="Action" />
+                     <PropertyValue Property="Action" String="toappnavsample" />
+                     <PropertyValue Property="Label" String="To Procurement Overview Page" />
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Product ID" />
+                     <PropertyValue Property="Value" Path="ProductID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Category" />
+                     <PropertyValue Property="Value" Path="Category" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Supplier" />
+                     <PropertyValue Property="Value" Path="SupplierName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Weight" />
+                     <PropertyValue Property="Value" Path="WeightMeasure" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Unit Price" />
+                     <PropertyValue Property="Value" Path="Price" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation">
+                     <PropertyValue Property="SemanticObject" String="Action" />
+                     <PropertyValue Property="Action" String="toappnavsample" />
+                     <PropertyValue Property="Label" String="SO Navigation (M)" />
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Identification" Qualifier="identify1">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation">
+                     <PropertyValue Property="SemanticObject" String="OVP" />
+                     <PropertyValue Property="Action" String="Map" />
+                     <PropertyValue Property="Label" String="To ListReport Page" />
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Product ID" />
+                     <PropertyValue Property="Value" Path="ProductID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Category" />
+                     <PropertyValue Property="Value" Path="Category" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Supplier" />
+                     <PropertyValue Property="Value" Path="SupplierName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Weight" />
+                     <PropertyValue Property="Value" Path="WeightMeasure" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Unit Price" />
+                     <PropertyValue Property="Value" Path="Price" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Product ID" />
+                     <PropertyValue Property="Value" Path="ProductID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Product Name" />
+                     <PropertyValue Property="Value" Path="Name" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Category" />
+                     <PropertyValue Property="Value" Path="Category" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Supplier" />
+                     <PropertyValue Property="Value" Path="SupplierName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Unit Price" />
+                     <PropertyValue Property="Value" Path="Price" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Weight" />
+                     <PropertyValue Property="Value" Path="WeightMeasure" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Width" />
+                     <PropertyValue Property="Value" Path="Width" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Depth" />
+                     <PropertyValue Property="Value" Path="Depth" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Height" />
+                     <PropertyValue Property="Value" Path="Height" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation" Qualifier="Price">
+                     <PropertyValue Property="Label" String="Unit Price" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#Price" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation" Qualifier="WeightMeasure">
+                     <PropertyValue Property="Label" String="Weight Measure" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#WeightMeasure" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation" Qualifier="Depth">
+                     <PropertyValue Property="Label" String="Depth" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#Depth" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem" Qualifier="Supplier ID Name and Availibility">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Supplier ID" />
+                     <PropertyValue Property="Value" Path="Name" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Supplier Name" />
+                     <PropertyValue Property="Value" Path="SupplierName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Category" />
+                     <PropertyValue Property="Value" Path="Category" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation" Qualifier="Price">
+                     <PropertyValue Property="Label" String="Unit Price" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#Stock_Availibility" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem" Qualifier="ReorderSoon">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Product Name" />
+                     <PropertyValue Property="Value" Path="Name" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Product ID" />
+                     <PropertyValue Property="Value" Path="ProductID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Supplier Name" />
+                     <PropertyValue Property="Value" Path="SupplierName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Category" />
+                     <PropertyValue Property="Value" Path="Category" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Availability" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#Stock_Availibility" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Price" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#Price" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.FieldGroup" Qualifier="Dimensions">
+               <Record Type="com.sap.vocabularies.UI.v1.FieldGroupType">
+                  <PropertyValue Property="Label" String="Dimensions" />
+                  <PropertyValue Property="Data">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Width" />
+                           <PropertyValue Property="Value" Path="Width" />
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Depth" />
+                           <PropertyValue Property="Value" Path="Depth" />
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Height" />
+                           <PropertyValue Property="Value" Path="Height" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Facets">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.CollectionFacet">
+                     <PropertyValue Property="Label" String="Supplier" />
+                     <PropertyValue Property="Facets">
+                        <Collection>
+                           <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                              <PropertyValue Property="Label" String="Address" />
+                              <PropertyValue Property="Target" AnnotationPath="ToSupplier/@com.sap.vocabularies.Communication.v1.Address" />
+                           </Record>
+                           <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                              <PropertyValue Property="Label" String="Contact Data" />
+                              <PropertyValue Property="Target" AnnotationPath="ToSupplier/@com.sap.vocabularies.UI.v1.Badge" />
+                           </Record>
+                        </Collection>
+                     </PropertyValue>
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                     <PropertyValue Property="Label" String="Dimensions" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.FieldGroup#Dimensions" />
+                  </Record>
+               </Collection>
+            </Annotation>
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.Product1">
+            <Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo">
+               <Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+                  <PropertyValue Property="TypeName" String="Product" />
+                  <PropertyValue Property="TypeNamePlural" String="Products" />
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Product Name" />
+                        <PropertyValue Property="Value" Path="Name" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="Description">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Product Description" />
+                        <PropertyValue Property="Value" Path="Description" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Badge">
+               <Record Type="com.sap.vocabularies.UI.v1.BadgeType">
+                  <PropertyValue Property="HeadLine" Path="ProductID" />
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Product Name" />
+                        <PropertyValue Property="Value" Path="Name" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="MainInfo">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Price" />
+                        <PropertyValue Property="Value" Path="Price" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="SecondaryInfo">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Dimensions" />
+                        <PropertyValue Property="Value">
+                           <Apply Function="odata.concat">
+                              <Path>Width</Path>
+                              <String>/</String>
+                              <Path>Depth</Path>
+                              <String>/</String>
+                              <Path>Height</Path>
+                           </Apply>
+                        </PropertyValue>
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="Price">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Unit Price" />
+                  <PropertyValue Property="Description" Path="Name" />
+                  <PropertyValue Property="Value" Path="Price" />
+                  <PropertyValue Property="ValueFormat">
+                     <Record Type="com.sap.vocabularies.UI.v1.NumberFormat">
+                        <PropertyValue Property="ScaleFactor" Decimal="1000" />
+                        <PropertyValue Property="NumberOfFractionalDigits" Int="1" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="CriticalityCalculation">
+                     <Record Type="com.sap.vocabularies.UI.v1.CriticalityCalculationType">
+                        <PropertyValue Property="ImprovementDirection" EnumMember="com.sap.vocabularies.UI.v1.CriticalityCalculationType/Maximize" />
+                        <PropertyValue Property="ToleranceRangeLowValue" Int="50" />
+                        <PropertyValue Property="DeviationRangeLowValue" Int="30" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="WeightMeasure">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Weight" />
+                  <PropertyValue Property="Description" Path="Name" />
+                  <PropertyValue Property="Value" Path="WeightMeasure" />
+                  <PropertyValue Property="CriticalityCalculation">
+                     <Record Type="com.sap.vocabularies.UI.v1.CriticalityCalculationType">
+                        <PropertyValue Property="ImprovementDirection" EnumMember="com.sap.vocabularies.UI.v1.CriticalityCalculationType/Maximize" />
+                        <PropertyValue Property="ToleranceRangeLowValue" Int="2" />
+                        <PropertyValue Property="DeviationRangeLowValue" Int="4" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="Depth">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Depth" />
+                  <PropertyValue Property="Description" Path="Name" />
+                  <PropertyValue Property="Value" Path="Depth" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Identification">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation">
+                     <PropertyValue Property="SemanticObject" String="Action" />
+                     <PropertyValue Property="Action" String="toappnavsample" />
+                     <PropertyValue Property="Label" String="To Procurment Page" />
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Product ID" />
+                     <PropertyValue Property="Value" Path="ProductID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Category" />
+                     <PropertyValue Property="Value" Path="Category" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Supplier" />
+                     <PropertyValue Property="Value" Path="SupplierName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Weight" />
+                     <PropertyValue Property="Value" Path="WeightMeasure" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Unit Price" />
+                     <PropertyValue Property="Value" Path="Price" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem" Qualifier="Product Id Category ProductName Price">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Supplier" />
+                     <PropertyValue Property="Value" Path="SupplierName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Description" />
+                     <PropertyValue Property="Value" Path="Description" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Product Name" />
+                     <PropertyValue Property="Value" Path="Name" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Unit Price" />
+                     <PropertyValue Property="Value" Path="Price" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Weight" />
+                     <PropertyValue Property="Value" Path="WeightMeasure" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Width" />
+                     <PropertyValue Property="Value" Path="Width" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Depth" />
+                     <PropertyValue Property="Value" Path="Depth" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Height" />
+                     <PropertyValue Property="Value" Path="Height" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation" Qualifier="Price">
+                     <PropertyValue Property="Label" String="Unit Price" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#Price" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation" Qualifier="WeightMeasure">
+                     <PropertyValue Property="Label" String="Weight Measure" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#WeightMeasure" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation" Qualifier="Depth">
+                     <PropertyValue Property="Label" String="Depth" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#Depth" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.FieldGroup" Qualifier="Dimensions">
+               <Record Type="com.sap.vocabularies.UI.v1.FieldGroupType">
+                  <PropertyValue Property="Label" String="Dimensions" />
+                  <PropertyValue Property="Data">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Width" />
+                           <PropertyValue Property="Value" Path="Width" />
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Depth" />
+                           <PropertyValue Property="Value" Path="Depth" />
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Height" />
+                           <PropertyValue Property="Value" Path="Height" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Facets">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.CollectionFacet">
+                     <PropertyValue Property="Label" String="Supplier" />
+                     <PropertyValue Property="Facets">
+                        <Collection>
+                           <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                              <PropertyValue Property="Label" String="Address" />
+                              <PropertyValue Property="Target" AnnotationPath="ToSupplier/@com.sap.vocabularies.Communication.v1.Address" />
+                           </Record>
+                           <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                              <PropertyValue Property="Label" String="Contact Data" />
+                              <PropertyValue Property="Target" AnnotationPath="ToSupplier/@com.sap.vocabularies.UI.v1.Badge" />
+                           </Record>
+                        </Collection>
+                     </PropertyValue>
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                     <PropertyValue Property="Label" String="Dimensions" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.FieldGroup#Dimensions" />
+                  </Record>
+               </Collection>
+            </Annotation>
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder/GrossAmount">
+            <Annotation Term="Org.OData.Measures.V1.ISOCurrency" Path="CurrencyCode" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder/NetAmount">
+            <Annotation Term="Org.OData.Measures.V1.ISOCurrency" Path="CurrencyCode" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder/LifecycleStatus">
+            <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="LifecycleStatusDescription" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder/BillingStatus">
+            <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="BillingStatusDescription" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder/DeliveryStatus">
+            <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="DeliveryStatusDescription" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder/CreatedAt">
+            <Annotation Term="com.sap.vocabularies.Common.v1.FieldControl" EnumMember="Common.FieldControlType/ReadOnly" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder/TaxAmount">
+            <Annotation Term="Org.OData.Measures.V1.Unit" String="%" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrder">
+            <Annotation Term="com.sap.vocabularies.UI.v1.PresentationVariant" Qualifier="GrossAmountSorter">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Label" String="Gross Amount in Descending Order" />
+               <Record>
+                  <PropertyValue Property="SortOrder">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="Property" PropertyPath="GrossAmount" />
+                           <PropertyValue Property="Descending" Boolean="true" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <!--***********************************************************-->
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="line">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Sales Orders Amounts by Status" />
+                  <PropertyValue Property="Description" String="Subtitle from data point annotation description property" />
+                  <PropertyValue Property="Value" Path="GrossAmount" />
+                  <PropertyValue Property="CriticalityCalculation">
+                     <Record Type="com.sap.vocabularies.UI.v1.CriticalityCalculationType">
+                        <PropertyValue Property="ImprovementDirection" EnumMember="com.sap.vocabularies.UI.v1.ImprovementDirectionType/Maximizing" />
+                        <PropertyValue Property="ToleranceRangeLowValue" String="3000" />
+                        <PropertyValue Property="DeviationRangeLowValue" String="4000" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="ValueFormat">
+                     <Record Type="com.sap.vocabularies.UI.v1.NumberFormat">
+                        <!--<PropertyValue Property="ScaleFactor" Decimal="1000"/>-->
+                        <PropertyValue Property="NumberOfFractionalDigits" Int="1" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="TrendCalculation">
+                     <Record>
+                        <PropertyValue Property="ReferenceValue" String="85000" />
+                        <PropertyValue Property="StrongUpDifference" Int="2000.0" />
+                        <PropertyValue Property="UpDifference" Int="100" />
+                        <PropertyValue Property="StrongDownDifference" Int="100" />
+                        <PropertyValue Property="DownDifference" Int="1000" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="line_percentage">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Sales Orders Amounts by Status" />
+                  <PropertyValue Property="Value" Path="NetAmount" />
+                  <PropertyValue Property="CriticalityCalculation">
+                     <Record Type="com.sap.vocabularies.UI.v1.CriticalityCalculationType">
+                        <PropertyValue Property="ImprovementDirection" EnumMember="com.sap.vocabularies.UI.v1.ImprovementDirectionType/Maximizing" />
+                        <PropertyValue Property="ToleranceRangeLowValue" String="3000" />
+                        <PropertyValue Property="DeviationRangeLowValue" String="4000" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="ValueFormat">
+                     <Record Type="com.sap.vocabularies.UI.v1.NumberFormat">
+                        <!--<PropertyValue Property="ScaleFactor" Decimal="1000"/>-->
+                        <PropertyValue Property="NumberOfFractionalDigits" Int="1" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="TrendCalculation">
+                     <Record>
+                        <PropertyValue Property="ReferenceValue" String="85000" />
+                        <PropertyValue Property="StrongUpDifference" Int="2000.0" />
+                        <PropertyValue Property="UpDifference" Int="100" />
+                        <PropertyValue Property="StrongDownDifference" Int="100" />
+                        <PropertyValue Property="DownDifference" Int="1000" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="line_without_trend">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Sales Orders Amounts by Status" />
+                  <PropertyValue Property="Value" Path="GrossAmount" />
+                  <PropertyValue Property="CriticalityCalculation">
+                     <Record Type="com.sap.vocabularies.UI.v1.CriticalityCalculationType">
+                        <PropertyValue Property="ImprovementDirection" EnumMember="com.sap.vocabularies.UI.v1.ImprovementDirectionType/Maximizing" />
+                        <PropertyValue Property="ToleranceRangeLowValue" String="3000" />
+                        <PropertyValue Property="DeviationRangeLowValue" String="4000" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="ValueFormat">
+                     <Record Type="com.sap.vocabularies.UI.v1.NumberFormat">
+                        <!--<PropertyValue Property="ScaleFactor" Decimal="1000"/>-->
+                        <PropertyValue Property="NumberOfFractionalDigits" Int="1" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.SelectionVariant" Qualifier="line">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Label" String="Where Gross Amount is not equal to 10000" />
+               <Record>
+                  <PropertyValue Property="SelectOptions">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="PropertyName" PropertyPath="GrossAmount" />
+                           <PropertyValue Property="Ranges">
+                              <Collection>
+                                 <Record>
+                                    <PropertyValue Property="Sign" EnumMember="com.sap.vocabularies.UI.v1.SelectionRangeSignType/I" />
+                                    <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/NE" />
+                                    <PropertyValue Property="Low" String="10000" />
+                                 </Record>
+                              </Collection>
+                           </PropertyValue>
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.SelectionVariant" Qualifier="line1">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Label" String="Sales Order Id where life cycle is completed and Sales Order Id is between 0500000005 and 0500000009" />
+               <Record>
+                  <PropertyValue Property="SelectOptions">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="PropertyName" PropertyPath="LifecycleStatusDescription" />
+                           <PropertyValue Property="Ranges">
+                              <Collection>
+                                 <Record>
+                                    <PropertyValue Property="Sign" EnumMember="com.sap.vocabularies.UI.v1.SelectionRangeSignType/I" />
+                                    <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/NE" />
+                                    <PropertyValue Property="Low" String="Completed" />
+                                 </Record>
+                              </Collection>
+                           </PropertyValue>
+                        </Record>
+                        <Record>
+                           <PropertyValue Property="PropertyName" PropertyPath="SalesOrderID" />
+                           <PropertyValue Property="Ranges">
+                              <Collection>
+                                 <Record>
+                                    <PropertyValue Property="Sign" EnumMember="com.sap.vocabularies.UI.v1.SelectionRangeSignType/I" />
+                                    <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/BT" />
+                                    <PropertyValue Property="Low" String="0500000005" />
+                                    <PropertyValue Property="High" String="0500000009" />
+                                 </Record>
+                              </Collection>
+                           </PropertyValue>
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.PresentationVariant" Qualifier="line">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Label" String="Customer Name in Descending Order" />
+               <Record>
+                  <PropertyValue Property="GroupBy">
+                     <Collection>
+                        <PropertyPath>LifecycleStatusDescription</PropertyPath>
+                        <PropertyPath>DeliveryStatusDescription</PropertyPath>
+                     </Collection>
+                  </PropertyValue>
+                  <PropertyValue Property="SortOrder">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="Property" PropertyPath="CustomerName" />
+                           <PropertyValue Property="Descending" Boolean="true" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.PresentationVariant" Qualifier="customer">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Label" String="Customer Name in Descending Order" />
+               <Record>
+                  <PropertyValue Property="GroupBy">
+                     <Collection>
+                        <PropertyPath>BillingStatusDescription</PropertyPath>
+                        <PropertyPath>DeliveryStatusDescription</PropertyPath>
+                     </Collection>
+                  </PropertyValue>
+                  <PropertyValue Property="Visualizations">
+                     <Collection>
+                        <AnnotationPath>@UI.LineItem#View2</AnnotationPath>
+                     </Collection>
+                  </PropertyValue>
+                  <PropertyValue Property="SortOrder">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="Property" PropertyPath="CustomerName" />
+                           <PropertyValue Property="Descending" Boolean="true" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Chart" Qualifier="line">
+               <Record Type="com.sap.vocabularies.UI.v1.ChartDefinitionType">
+                  <PropertyValue Property="Title" String="Gross Income per Legal Entity" />
+                  <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Line" />
+                  <PropertyValue Property="MeasureAttributes">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.UI.v1.ChartMeasureAttributeType">
+                           <PropertyValue Property="Measure" PropertyPath="GrossAmount" />
+                           <PropertyValue Property="Role" EnumMember="com.sap.vocabularies.UI.v1.ChartMeasureRoleType/Axis1" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+                  <PropertyValue Property="DimensionAttributes">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.UI.v1.ChartDimensionAttributeType">
+                           <PropertyValue Property="Dimension" PropertyPath="LegalFormName" />
+                           <PropertyValue Property="Role" EnumMember="com.sap.vocabularies.UI.v1.ChartDimensionRoleType/Category" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="UI.PresentationVariant" Qualifier="Eval_by_CtryCurr">
+               <Record>
+                  <PropertyValue Property="MaxItems" Int="5" />
+                  <PropertyValue Property="Visualizations">
+                     <Collection>
+                        <AnnotationPath>@UI.Chart#line</AnnotationPath>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="UI.SelectionVariant" Qualifier="Eval_by_Currency_1">
+               <Record>
+                  <PropertyValue Property="SelectOptions">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="PropertyName" PropertyPath="LifecycleStatusDescription" />
+                           <PropertyValue Property="Ranges">
+                              <Collection>
+                                 <Record>
+                                    <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I" />
+                                    <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ" />
+                                    <PropertyValue Property="Low" String="Approved" />
+                                 </Record>
+                              </Collection>
+                           </PropertyValue>
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <!--***********************************************************-->
+            <Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo">
+               <Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+                  <PropertyValue Property="TypeName" String="Sales Order" />
+                  <PropertyValue Property="TypeNamePlural" String="Sales Orders" />
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Order ID" />
+                        <PropertyValue Property="Value" Path="SalesOrderID" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="Description">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Customer" />
+                        <PropertyValue Property="Value" Path="CustomerName" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="ImageUrl" String="sap-icon://sales-order" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo" Qualifier="dynamicSubtitle">
+               <Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+                  <PropertyValue Property="TypeName" String="Sales Order" />
+                  <PropertyValue Property="TypeNamePlural" String="Sales Orders" />
+                  <PropertyValue Property="Description">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Customer" />
+                        <PropertyValue Property="Value" Path="DynamicSubTitle" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="ImageUrl" String="sap-icon://sales-order" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Badge">
+               <Record Type="com.sap.vocabularies.UI.v1.BadgeType">
+                  <PropertyValue Property="HeadLine">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="SalesOrderID" />
+                        <PropertyValue Property="Value" Path="SalesOrderID" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Customer" />
+                        <PropertyValue Property="Value" Path="CustomerName" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="MainInfo">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Gross Amount" />
+                        <PropertyValue Property="Value" Path="GrossAmount" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="SecondaryInfo">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Status" />
+                        <PropertyValue Property="Value" Path="LifecycleStatus" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="Status">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Overall Status" />
+                  <PropertyValue Property="Value" Path="LifecycleStatusDescription" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="Profitability">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="TaxAmount" />
+                  <PropertyValue Property="Value" Path="TaxAmount" />
+                  <PropertyValue Property="CriticalityCalculation">
+                     <Record Type="com.sap.vocabularies.UI.v1.CriticalityCalculationType">
+                        <PropertyValue Property="ImprovementDirection" EnumMember="com.sap.vocabularies.UI.v1.CriticalityCalculationType/Target" />
+                        <PropertyValue Property="ToleranceRangeHighValue" Int="100" />
+                        <PropertyValue Property="ToleranceRangeLowValue" Int="90" />
+                        <PropertyValue Property="DeviationRangeHighValue" Int="90" />
+                        <PropertyValue Property="DeviationRangeLowValue" Int="80" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="TaxAmount">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="TaxAmount" />
+                  <PropertyValue Property="Value" Path="TaxAmount" />
+                  <PropertyValue Property="CriticalityCalculation">
+                     <Record Type="com.sap.vocabularies.UI.v1.CriticalityCalculationType">
+                        <PropertyValue Property="ImprovementDirection" EnumMember="com.sap.vocabularies.UI.v1.CriticalityCalculationType/Minimize" />
+                        <PropertyValue Property="ToleranceRangeHighValue" Int="80" />
+                        <PropertyValue Property="DeviationRangeHighValue" Int="90" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="GrossAmount">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Gross Amount" />
+                  <PropertyValue Property="Value" Path="GrossAmount" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="NetAmountNoCriticality">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Net Amount" />
+                  <PropertyValue Property="Value" Path="NetAmount" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="CreationDate">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="CreatedAt" />
+                  <PropertyValue Property="Value" Path="CreatedAt" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="NetAmount">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="NetAmount" />
+                  <PropertyValue Property="Value" Path="NetAmount" />
+                  <PropertyValue Property="CriticalityCalculation">
+                     <Record Type="com.sap.vocabularies.UI.v1.CriticalityCalculationType">
+                        <PropertyValue Property="ImprovementDirection" EnumMember="com.sap.vocabularies.UI.v1.CriticalityCalculationType/Maximize" />
+                        <PropertyValue Property="ToleranceRangeLowValue" Int="20000" />
+                        <PropertyValue Property="DeviationRangeLowValue" Int="10000" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="ContractAmount">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="ContractAmount" />
+                  <PropertyValue Property="Value" Path="ContractAmount" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="ValidToDate">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="ValidToDate" />
+                  <PropertyValue Property="Value" Path="ValidToDate" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="Amount">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="Gross Amount" />
+                  <PropertyValue Property="Value" Path="GrossAmount" />
+                  <PropertyValue Property="CriticalityCalculation">
+                     <Record Type="com.sap.vocabularies.UI.v1.CriticalityCalculationType">
+                        <PropertyValue Property="ImprovementDirection" EnumMember="com.sap.vocabularies.UI.v1.CriticalityCalculationType/Maximize" />
+                        <PropertyValue Property="ToleranceRangeLowValue" Int="0" />
+                        <PropertyValue Property="DeviationRangeLowValue" Int="11000" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Identification">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldWithUrl">
+                     <PropertyValue Property="Label" String="Link to url" />
+                     <PropertyValue Property="Value" String="Google Maps" />
+                     <PropertyValue Property="Url" String="https://www.google.com" />
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldWithUrl">
+                     <PropertyValue Property="Label" String="Link to Procument Page" />
+                     <PropertyValue Property="Value" String="Some Intent" />
+                     <PropertyValue Property="Url" String="#OVP-App" />
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldWithUrl">
+                     <PropertyValue Property="Label" String="Link to Procument Page" />
+                     <PropertyValue Property="Value" String="Some Intent" />
+                     <PropertyValue Property="Url" String="#Action-toappnavsample2&amp;/ShowView2/" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation">
+                     <PropertyValue Property="SemanticObject" String="Action" />
+                     <PropertyValue Property="Action" String="toappnavsample" />
+                     <PropertyValue Property="Label" String="To List Report Page" />
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer ID" />
+                     <PropertyValue Property="Value" Path="CustomerID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Gross Amount" />
+                     <PropertyValue Property="Value" Path="GrossAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Status" />
+                     <PropertyValue Property="Value" Path="LifecycleStatus" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                     <PropertyValue Property="Label" String="Confirm" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Confirm" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                     <PropertyValue Property="Label" String="Cancel" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Cancel" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" />
+                     <PropertyValue Property="Label" String="Confirm H" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Confirm" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" />
+                     <PropertyValue Property="Label" String="Cancel H" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Cancel" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Identification" Qualifier="item2">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldWithUrl">
+                     <PropertyValue Property="Label" String="Link to url" />
+                     <PropertyValue Property="Value" String="Google Maps" />
+                     <PropertyValue Property="Url" String="https://www.google.com" />
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation">
+                     <PropertyValue Property="SemanticObject" String="Action" />
+                     <PropertyValue Property="Action" String="toappnavsample" />
+                     <PropertyValue Property="Label" String="To List Report Page" />
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer ID" />
+                     <PropertyValue Property="Value" Path="CustomerID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Gross Amount" />
+                     <PropertyValue Property="Value" Path="GrossAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Status" />
+                     <PropertyValue Property="Value" Path="LifecycleStatus" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                     <PropertyValue Property="Label" String="Confirm" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Confirm" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                     <PropertyValue Property="Label" String="Cancel" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Cancel" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" />
+                     <PropertyValue Property="Label" String="Confirm H" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Confirm" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" />
+                     <PropertyValue Property="Label" String="Cancel H" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Cancel" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem" Qualifier="NewSalesOrders">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Order ID (Company)" />
+                     <PropertyValue Property="Value" Path="SalesOrderID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Created by (Role)" />
+                     <PropertyValue Property="Target" AnnotationPath="ToBusinessPartner/@com.sap.vocabularies.Communication.v1.Contact" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Status" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#StatusWithCriticality" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Gross Amount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#GrossAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Creation Date" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#CreationDate" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Net Amount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#NetAmountNoCriticality" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <!-- If there's no navigation target for the data field the current entityset is considered for contactAnnoPath for smart link in table card.
+				Hence the following commented contact annotation. -->
+            <!-- <Annotation Term="com.sap.vocabularies.Communication.v1.Contact">
+					<Record>
+						<PropertyValue Property="fn" Path="CustomerName" />
+						<PropertyValue Property="title" Path="Title" />
+						<PropertyValue Property="org" Path="CompanyName" />
+						<PropertyValue Property="role" Path="OrganizationRole" />
+						<PropertyValue Property="photo" Path="Photo" />
+						<PropertyValue Property="tel">
+							<Collection>
+								<Record>
+									<PropertyValue Property="type"
+										EnumMember="com.sap.vocabularies.Communication.v1.PhoneType/fax" />
+									<PropertyValue Property="uri" Path="Note" />
+								</Record>
+								<Record>
+									<PropertyValue Property="type"
+										EnumMember="com.sap.vocabularies.Communication.v1.PhoneType/work com.sap.vocabularies.Communication.v1.PhoneType/pref" />
+									<PropertyValue Property="uri" Path="NoteLanguage" />
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="email">
+							<Collection>
+								<Record>
+									<PropertyValue Property="type"
+										EnumMember="com.sap.vocabularies.Communication.v1.ContactInformationType/pref com.sap.vocabularies.Communication.v1.ContactInformationType/work" />
+									<PropertyValue Property="address" Path="CustomerName" />
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation> -->
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem" Qualifier="NewCustomers">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Contract" />
+                     <PropertyValue Property="Value" Path="CustomerName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Creation Date" />
+                     <PropertyValue Property="Value" Path="CreatedAt" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Target Value" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#TargetValue" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Consumed Value" />
+                     <PropertyValue Property="Target" AnnotationPath="ToBusinessPartner/@com.sap.vocabularies.Communication.v1.Contact" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Valid From" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#ValidFrom" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Valid To" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#ValidTo" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem" Qualifier="NewCustomers1">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Supplier" />
+                     <PropertyValue Property="Value" Path="CustomerName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Contract ID (Customer)" />
+                     <PropertyValue Property="Value" Path="CustomerID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Creation Date" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#CreationDate" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Target Value" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#TargetValue" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Consumed Value" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#ConsumedValue" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Valid From" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#ValidFrom" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Valid To" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#ValidTo" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="CreationDate">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Value" Path="CreatedAt" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="TargetValue">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Value" Path="GrossAmount" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="ValidFrom">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Value" Path="ValidFrom" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="ValidTo">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Value" Path="ValidTo" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="ConsumedValue">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Value" Path="NetAmount" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="StatusWithCriticality">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Value" Path="LifecycleStatus" />
+                  <PropertyValue Property="Criticality" Path="LifecycleStatus" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Order ID" />
+                     <PropertyValue Property="Value" Path="SalesOrderID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer" />
+                     <PropertyValue Property="Value" Path="ToBusinessPartner/EmailAddress" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Net Amt." />
+                     <PropertyValue Property="Value" Path="NetAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Status" />
+                     <PropertyValue Property="Value" Path="LifecycleStatus" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Created at" />
+                     <PropertyValue Property="Value" Path="CreatedAt" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer email" />
+                     <PropertyValue Property="Value" Path="ToBusinessPartner/EmailAddress" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer" />
+                     <PropertyValue Property="Value" Path="CustomerName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Gross Amt." />
+                     <PropertyValue Property="Value" Path="GrossAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Changed at" />
+                     <PropertyValue Property="Value" Path="ChangedAt" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Amount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#Amount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="NetAmount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#NetAmount" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem" Qualifier="View1">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer" />
+                     <PropertyValue Property="Value" Path="CustomerName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Order ID" />
+                     <PropertyValue Property="Value" Path="SalesOrderID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Net Amt." />
+                     <PropertyValue Property="Value" Path="NetAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="TaxAmount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#TaxAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Contact Detail" />
+                     <PropertyValue Property="Target" AnnotationPath="ToBusinessPartner/@com.sap.vocabularies.Communication.v1.Contact" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="ValidToDate" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#ValidToDate" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Gross Amt." />
+                     <PropertyValue Property="Value" Path="GrossAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Created at" />
+                     <PropertyValue Property="Value" Path="CreatedAt" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Status" />
+                     <PropertyValue Property="Value" Path="LifecycleStatus" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Changed at" />
+                     <PropertyValue Property="Value" Path="ChangedAt" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer" />
+                     <PropertyValue Property="Value" Path="ToBusinessPartner/EmailAddress" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="ContractAmount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#ContractAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="NetAmount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#NetAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Amount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#Amount" />
+                  </Record>
+                  <!--<Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">-->
+                  <!--<PropertyValue Property="Label" String="TaxAmount"/>-->
+                  <!--<PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#TaxAmount"/>-->
+                  <!--<Annotation EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" Term="com.sap.vocabularies.UI.v1.Importance"/>-->
+                  <!--</Record>-->
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem" Qualifier="View4">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Order ID" />
+                     <PropertyValue Property="Value" Path="SalesOrderID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer" />
+                     <PropertyValue Property="Value" Path="ToBusinessPartner/EmailAddress" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer" />
+                     <PropertyValue Property="Value" Path="CustomerName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="TaxAmount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#TaxAmount" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem" Qualifier="View2">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Order ID" />
+                     <PropertyValue Property="Value" Path="SalesOrderID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer" />
+                     <PropertyValue Property="Value" Path="ToBusinessPartner/EmailAddress" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer" />
+                     <PropertyValue Property="Value" Path="CustomerName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Net Amt." />
+                     <PropertyValue Property="Value" Path="NetAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Created at" />
+                     <PropertyValue Property="Value" Path="CreatedAt" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Status" />
+                     <PropertyValue Property="Value" Path="LifecycleStatus" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="TaxAmount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#TaxAmount" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem" Qualifier="View3">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer" />
+                     <PropertyValue Property="Value" Path="CustomerName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Order ID" />
+                     <PropertyValue Property="Value" Path="SalesOrderID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Net Amt." />
+                     <PropertyValue Property="Value" Path="NetAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="TaxAmount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#TaxAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="ValidToDate" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#ValidToDate" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Gross Amt." />
+                     <PropertyValue Property="Value" Path="GrossAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Created at" />
+                     <PropertyValue Property="Value" Path="CreatedAt" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Status" />
+                     <PropertyValue Property="Value" Path="LifecycleStatus" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Changed at" />
+                     <PropertyValue Property="Value" Path="ChangedAt" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer" />
+                     <PropertyValue Property="Value" Path="ToBusinessPartner/EmailAddress" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="ContractAmount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#GrossAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="NetAmount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#NetAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Amount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#Amount" />
+                  </Record>
+                  <!--<Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">-->
+                  <!--<PropertyValue Property="Label" String="TaxAmount"/>-->
+                  <!--<PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#TaxAmount"/>-->
+                  <!--<Annotation EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" Term="com.sap.vocabularies.UI.v1.Importance"/>-->
+                  <!--</Record>-->
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem" Qualifier="View5">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer" />
+                     <PropertyValue Property="Value" Path="CustomerName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Net Amount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#NetAmountNoCriticality" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Gross Amount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#GrossAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Created At" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#CreationDate" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Profitability" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#Profitability" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.SelectionPresentationVariant" Qualifier="BothSelectionAndPresentation">
+               <Record>
+                  <PropertyValue Property="ID" String="" />
+                  <PropertyValue Property="Text" String="" />
+                  <PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#SP2" />
+                  <PropertyValue Property="PresentationVariant" Path="@UI.PresentationVariant#customer" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.SelectionVariant" Qualifier="SP2">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Label" String="Where Customer Name is Asia High tech" />
+               <Record>
+                  <PropertyValue Property="SelectOptions">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="PropertyName" PropertyPath="CustomerName" />
+                           <PropertyValue Property="Ranges">
+                              <Collection>
+                                 <Record>
+                                    <PropertyValue Property="Sign" EnumMember="com.sap.vocabularies.UI.v1.SelectionRangeSignType/I" />
+                                    <PropertyValue Property="Option" EnumMember="com.sap.vocabularies.UI.v1.SelectionRangeOptionType/EQ" />
+                                    <PropertyValue Property="Low" String="Asia High tech" />
+                                 </Record>
+                              </Collection>
+                           </PropertyValue>
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="UI.PresentationVariant" Qualifier="SP2">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Label" String="Customer Name in Descending Order" />
+               <Record>
+                  <PropertyValue Property="SortOrder">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="Property" PropertyPath="CustomerName" />
+                           <PropertyValue Property="Descending" Boolean="true" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="UI.PresentationVariant" Qualifier="SP3">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Label" String="Net Amount in Descending Order" />
+               <Record>
+                  <PropertyValue Property="SortOrder">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="Property" PropertyPath="NetAmount" />
+                           <PropertyValue Property="Descending" Boolean="true" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.StatusInfo">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Overall Status" />
+                     <PropertyValue Property="Value" Path="LifecycleStatus" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Billing Status" />
+                     <PropertyValue Property="Value" Path="BillingStatus" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Delivery Status" />
+                     <PropertyValue Property="Value" Path="DeliveryStatus" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.FieldGroup" Qualifier="Note">
+               <Record Type="com.sap.vocabularies.UI.v1.FieldGroupType">
+                  <PropertyValue Property="Label" String="Order Note" />
+                  <PropertyValue Property="Data">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="SalesOrderID" />
+                           <PropertyValue Property="Value" Path="SalesOrderID" />
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="CustomerName" />
+                           <PropertyValue Property="Value" Path="CustomerName" />
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="GrossAmount" />
+                           <PropertyValue Property="Value" Path="GrossAmount" />
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Text" />
+                           <PropertyValue Property="Value" Path="Note" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.FieldGroup" Qualifier="Note2">
+               <Record Type="com.sap.vocabularies.UI.v1.FieldGroupType">
+                  <PropertyValue Property="Label" String="Order Note" />
+                  <PropertyValue Property="Data">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Text" />
+                           <PropertyValue Property="Value" Path="Note" />
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataFieldWithUrl">
+                           <PropertyValue Property="Label" String="Link to" />
+                           <PropertyValue Property="Value" String="Google Maps" />
+                           <PropertyValue Property="Url">
+                              <Apply Function="odata.fillUriTemplate">
+                                 <String>https://www.google.de/maps/place/{street},{city}</String>
+                                 <LabeledElement Name="street">
+                                    <Apply Function="odata.uriEncode">
+                                       <Path>Address/Street</Path>
+                                    </Apply>
+                                 </LabeledElement>
+                                 <LabeledElement Name="city">
+                                    <Apply Function="odata.uriEncode">
+                                       <Path>Address/City</Path>
+                                    </Apply>
+                                 </LabeledElement>
+                              </Apply>
+                           </PropertyValue>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                           <PropertyValue Property="Label" String="Address" />
+                           <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.Communication.v1.Address" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Facets">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                     <PropertyValue Property="Label" String="Items" />
+                     <PropertyValue Property="Target" AnnotationPath="ToLineItems/@com.sap.vocabularies.UI.v1.LineItem" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                     <PropertyValue Property="Label" String="Status Information" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.StatusInfo" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                     <PropertyValue Property="Label" String="Note" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.FieldGroup#Note" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.IsSummary" />
+                     <PropertyValue Property="Label" String="Note" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.FieldGroup#Note" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <!--&lt;!&ndash;*******************************************&ndash;&gt;-->
+            <!--<Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="line">-->
+            <!--<Record Type="com.sap.vocabularies.UI.v1.DataPointType">-->
+            <!--<PropertyValue Property="Title" String="Sales Orders Amounts by Status"/>-->
+            <!--<PropertyValue Property="Value" Path="GrossAmount"/>-->
+            <!--<PropertyValue Property="CriticalityCalculation">-->
+            <!--<Record Type="com.sap.vocabularies.UI.v1.CriticalityCalculationType">-->
+            <!--<PropertyValue Property="ImprovementDirection" EnumMember="com.sap.vocabularies.UI.v1.ImprovementDirectionType/Maximizing"/>-->
+            <!--<PropertyValue Property="ToleranceRangeLowValue" String="3000"/>-->
+            <!--<PropertyValue Property="DeviationRangeLowValue" String="4000"/>-->
+            <!--</Record>-->
+            <!--</PropertyValue>-->
+            <!--</Record>-->
+            <!--</Annotation>-->
+            <!--<Annotation Term="com.sap.vocabularies.UI.v1.SelectionVariant" Qualifier="line">-->
+            <!--<Record>-->
+            <!--<PropertyValue Property="SelectOptions">-->
+            <!--<Collection>-->
+            <!--<Record>-->
+            <!--<PropertyValue Property="PropertyName" PropertyPath="GrossAmount" />-->
+            <!--<PropertyValue Property="Ranges">-->
+            <!--<Collection>-->
+            <!--<Record>-->
+            <!--<PropertyValue Property="Sign"-->
+            <!--EnumMember="com.sap.vocabularies.UI.v1.SelectionRangeSignType/I" />-->
+            <!--<PropertyValue Property="Option"-->
+            <!--EnumMember="com.sap.vocabularies.UI.v1.SelectionRangeOptionType/BT" />-->
+            <!--<PropertyValue Property="Low" String="0" />-->
+            <!--<PropertyValue Property="High" String="8000" />-->
+            <!--</Record>-->
+            <!--</Collection>-->
+            <!--</PropertyValue>-->
+            <!--</Record>-->
+            <!--</Collection>-->
+            <!--</PropertyValue>-->
+            <!--</Record>-->
+            <!--</Annotation>-->
+            <!--<Annotation Term="com.sap.vocabularies.UI.v1.PresentationVariant" Qualifier="line">-->
+            <!--<Record>-->
+            <!--<PropertyValue Property="GroupBy">-->
+            <!--<Collection>-->
+            <!--<PropertyPath>Status</PropertyPath>-->
+            <!--</Collection>-->
+            <!--</PropertyValue>-->
+            <!--<PropertyValue Property="SortOrder">-->
+            <!--<Collection>-->
+            <!--<Record>-->
+            <!--<PropertyValue Property="Property" PropertyPath="GrossAmount" />-->
+            <!--<PropertyValue Property="Descending" Boolean="true" />-->
+            <!--</Record>-->
+            <!--</Collection>-->
+            <!--</PropertyValue>-->
+            <!--</Record>-->
+            <!--</Annotation>-->
+            <!--<Annotation Term="com.sap.vocabularies.UI.v1.Chart" Qualifier="line">-->
+            <!--<Record Type="com.sap.vocabularies.UI.v1.ChartDefinitionType">-->
+            <!--<PropertyValue Property="Title" String="View1" />-->
+            <!--<PropertyValue Property="MeasureAttributes">-->
+            <!--<Collection>-->
+            <!--<Record Type="com.sap.vocabularies.UI.v1.ChartMeasureAttributeType">-->
+            <!--<PropertyValue Property="Measure" PropertyPath="GrossAmount" />-->
+            <!--<PropertyValue Property="Role" EnumMember="com.sap.vocabularies.UI.v1.ChartMeasureRoleType/Axis1" />-->
+            <!--</Record>-->
+            <!--</Collection>-->
+            <!--</PropertyValue>-->
+            <!--<PropertyValue Property="DimensionAttributes">-->
+            <!--<Collection>-->
+            <!--<Record Type="com.sap.vocabularies.UI.v1.ChartDimensionAttributeType">-->
+            <!--<PropertyValue Property="Dimension" PropertyPath="LifecycleStatusDescription" />-->
+            <!--<PropertyValue Property="Role" EnumMember="com.sap.vocabularies.UI.v1.ChartDimensionRoleType/Series" />-->
+            <!--</Record>-->
+            <!--</Collection>-->
+            <!--</PropertyValue>-->
+            <!--</Record>-->
+            <!--</Annotation>-->
+            <!--&lt;!&ndash;*******************************************&ndash;&gt;-->
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrderLineItem/GrossAmount">
+            <Annotation Term="Org.OData.Measures.V1.ISOCurrency" Path="CurrencyCode" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrderLineItem/NetAmount">
+            <Annotation Term="Org.OData.Measures.V1.ISOCurrency" Path="CurrencyCode" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrderLineItem/TaxAmount">
+            <Annotation Term="Org.OData.Measures.V1.ISOCurrency" Path="CurrencyCode" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrderLineItem/Quantity">
+            <Annotation Term="Org.OData.Measures.V1.Unit" Path="QunatityUnit" />
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.SalesOrderLineItem">
+            <Annotations Target="GWSAMPLE_BASIC.SalesOrderLineItem/GrossAmount">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="TaxAmount">
+                  <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast" />
+               </Annotation>
+            </Annotations>
+            <Annotations Target="GWSAMPLE_BASIC.SalesOrderLineItem/Quantity">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="QuantityUnit">
+                  <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast" />
+               </Annotation>
+            </Annotations>
+            <Annotations Target="GWSAMPLE_BASIC.SalesOrderLineItem/ItemPosition">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="NoteLanguage">
+                  <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast" />
+               </Annotation>
+            </Annotations>
+            <Annotations Target="GWSAMPLE_BASIC.SalesOrderLineItem/ProductName">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="ProductID">
+                  <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast" />
+               </Annotation>
+            </Annotations>
+            <Annotation Term="com.sap.vocabularies.UI.v1.DataPoint" Qualifier="TaxAmount">
+               <Record Type="com.sap.vocabularies.UI.v1.DataPointType">
+                  <PropertyValue Property="Title" String="TaxAmount" />
+                  <PropertyValue Property="Value" Path="TaxAmount" />
+                  <PropertyValue Property="CriticalityCalculation">
+                     <Record Type="com.sap.vocabularies.UI.v1.CriticalityCalculationType">
+                        <PropertyValue Property="ImprovementDirection" EnumMember="com.sap.vocabularies.UI.v1.CriticalityCalculationType/Minimize" />
+                        <PropertyValue Property="ToleranceRangeHighValue" Int="80" />
+                        <PropertyValue Property="DeviationRangeHighValue" Int="90" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo">
+               <Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+                  <PropertyValue Property="TypeName" String="Purchase Order" />
+                  <PropertyValue Property="TypeNamePlural" String="Sales Order Items" />
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Sales Order ID" />
+                        <PropertyValue Property="Value" Path="ItemPosition" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="Description">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Product ID" />
+                        <PropertyValue Property="Value" Path="ProductName" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="ImageUrl" String="sap-icon://sales-order" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Badge">
+               <Record Type="com.sap.vocabularies.UI.v1.BadgeType">
+                  <PropertyValue Property="HeadLine">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Value">
+                           <Apply Function="odata.concat">
+                              <Path>SalesOrderID</Path>
+                              <String><![CDATA[/]]></String>
+                              <Path>ItemPosition</Path>
+                           </Apply>
+                        </PropertyValue>
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Product" />
+                        <PropertyValue Property="Value" Path="ProductID" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="MainInfo">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Quantity" />
+                        <PropertyValue Property="Value" Path="Quantity" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="SecondaryInfo">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Gross Amount" />
+                        <PropertyValue Property="Value" Path="GrossAmount" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Identification">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldWithUrl">
+                     <PropertyValue Property="Label" String="Link to custom Url" />
+                     <PropertyValue Property="Value" String="Google Maps" />
+                     <PropertyValue Property="Url">
+                        <Apply Function="odata.fillUriTemplate">
+                           <String>https://www.google.de/maps/place/{street},{city}</String>
+                           <LabeledElement Name="street">
+                              <Apply Function="odata.uriEncode">
+                                 <Path>ItemPosition</Path>
+                              </Apply>
+                           </LabeledElement>
+                           <LabeledElement Name="city">
+                              <Apply Function="odata.uriEncode">
+                                 <Path>ItemPosition</Path>
+                              </Apply>
+                           </LabeledElement>
+                        </Apply>
+                     </PropertyValue>
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation">
+                     <PropertyValue Property="SemanticObject" String="Action" />
+                     <PropertyValue Property="Action" String="toappnavsample" />
+                     <PropertyValue Property="Label" String="SO Navigation (M)" />
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Customer ID" />
+                     <PropertyValue Property="Value" Path="CustomerID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Gross Amount" />
+                     <PropertyValue Property="Value" Path="GrossAmount" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Status" />
+                     <PropertyValue Property="Value" Path="LifecycleStatus" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Created at" />
+                     <PropertyValue Property="Value" Path="CreatedAt" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Changed at" />
+                     <PropertyValue Property="Value" Path="ChangedAt" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                     <PropertyValue Property="Label" String="Confirm" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Confirm" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                     <PropertyValue Property="Label" String="Cancel" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Cancel" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" />
+                     <PropertyValue Property="Label" String="Confirm H" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Confirm" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" />
+                     <PropertyValue Property="Label" String="Cancel H" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Cancel" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Identification" Qualifier="Awaiting_Approval">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation">
+                     <PropertyValue Property="SemanticObject" String="Action" />
+                     <PropertyValue Property="Action" String="toappnavsample" />
+                     <PropertyValue Property="Label" String="To Object Page" />
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                     <PropertyValue Property="Label" String="Approve" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Confirm" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAction">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.Importance" EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+                     <PropertyValue Property="Label" String="Reject" />
+                     <PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrder_Cancel" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Product ID" />
+                     <PropertyValue Property="Value" Path="ProductID" />
+                     <Annotation EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" Term="com.sap.vocabularies.UI.v1.Importance" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Item" />
+                     <PropertyValue Property="Value" Path="ItemPosition" />
+                     <Annotation EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" Term="com.sap.vocabularies.UI.v1.Importance" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Net Amt." />
+                     <PropertyValue Property="Value" Path="NetAmount" />
+                     <Annotation EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" Term="com.sap.vocabularies.UI.v1.Importance" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="TaxAmount" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.DataPoint#TaxAmount" />
+                     <Annotation EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" Term="com.sap.vocabularies.UI.v1.Importance" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Gross Amt." />
+                     <PropertyValue Property="Value" Path="GrossAmount" />
+                     <Annotation EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" Term="com.sap.vocabularies.UI.v1.Importance" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Supplier Email Address" />
+                     <PropertyValue Property="Value" Path="ToProduct/ToSupplier/EmailAddress" />
+                     <Annotation EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" Term="com.sap.vocabularies.UI.v1.Importance" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Quantity" />
+                     <PropertyValue Property="Value" Path="Quantity" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Time Stamp" />
+                     <PropertyValue Property="Value" Path="DeliveryDate" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem" Qualifier="ReorderSoon1">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Product" />
+                     <PropertyValue Property="Value" Path="ToProduct/Name" />
+                     <Annotation EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" Term="com.sap.vocabularies.UI.v1.Importance" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Supplier" />
+                     <PropertyValue Property="Value" Path="ToHeader/Name" />
+                     <Annotation EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" Term="com.sap.vocabularies.UI.v1.Importance" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Quantity" />
+                     <PropertyValue Property="Value" Path="Quantity" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Time Stamp" />
+                     <PropertyValue Property="Value" Path="DeliveryDate" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.FieldGroup" Qualifier="Note">
+               <Record Type="com.sap.vocabularies.UI.v1.FieldGroupType">
+                  <!--<PropertyValue Property="Label" String="Order ID"/>-->
+                  <PropertyValue Property="Data">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Gross Amount (Tax Amount)" />
+                           <PropertyValue Property="Value" Path="GrossAmount" />
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Number Of Items (Unit)" />
+                           <PropertyValue Property="Value" Path="Quantity" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.FieldGroup" Qualifier="Note1">
+               <Record Type="com.sap.vocabularies.UI.v1.FieldGroupType">
+                  <!--<PropertyValue Property="Label" String="Product and Supplier"/>-->
+                  <PropertyValue Property="Data">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Ordered By" />
+                           <PropertyValue Property="Value" Path="Name" />
+                           <Annotation EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" Term="com.sap.vocabularies.UI.v1.Importance" />
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Ordered On" />
+                           <PropertyValue Property="Value" Path="DeliveryDate" />
+                           <Annotation EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" Term="com.sap.vocabularies.UI.v1.Importance" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Facets">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.IsSummary" />
+                     <PropertyValue Property="Label" String="Note" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.FieldGroup#Note" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.IsSummary" />
+                     <PropertyValue Property="Label" String="Note1" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.FieldGroup#Note1" />
+                  </Record>
+               </Collection>
+            </Annotation>
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.BusinessPartner">
+            <Annotation Term="com.sap.vocabularies.Communication.v1.Contact">
+               <Record>
+                  <PropertyValue Property="fn" Path="FullName" />
+                  <PropertyValue Property="title" Path="Title" />
+                  <PropertyValue Property="org" Path="CompanyName" />
+                  <PropertyValue Property="role" Path="OrganizationRole" />
+                  <!--<PropertyValue Property="photo" Path="Photo" />-->
+                  <PropertyValue Property="tel">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="type" EnumMember="com.sap.vocabularies.Communication.v1.PhoneType/fax" />
+                           <PropertyValue Property="uri" Path="FaxNumber" />
+                        </Record>
+                        <Record>
+                           <PropertyValue Property="type" EnumMember="com.sap.vocabularies.Communication.v1.PhoneType/work com.sap.vocabularies.Communication.v1.PhoneType/pref" />
+                           <PropertyValue Property="uri" Path="PhoneNumber" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+                  <PropertyValue Property="email">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="type" EnumMember="com.sap.vocabularies.Communication.v1.ContactInformationType/pref com.sap.vocabularies.Communication.v1.ContactInformationType/work" />
+                           <PropertyValue Property="address" Path="EmailAddress" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo">
+               <Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+                  <PropertyValue Property="TypeName" String="Business Partner" />
+                  <PropertyValue Property="TypeNamePlural" String="Business Partners" />
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Name" />
+                        <PropertyValue Property="Value">
+                           <Apply Function="odata.concat">
+                              <Path>CompanyName</Path>
+                              <String />
+                              <Path>LegalForm</Path>
+                           </Apply>
+                        </PropertyValue>
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.PresentationVariant" Qualifier="CompanyNameSorter">
+               <Annotation Term="com.sap.vocabularies.Common.v1.Label" String="Company Name in Descending Order" />
+               <Record>
+                  <PropertyValue Property="SortOrder">
+                     <Collection>
+                        <Record>
+                           <PropertyValue Property="Property" PropertyPath="CompanyName" />
+                           <PropertyValue Property="Descending" Boolean="true" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Identification">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldWithUrl">
+                     <PropertyValue Property="Label" String="Link to Url" />
+                     <PropertyValue Property="Value" String="Google Maps" />
+                     <PropertyValue Property="Url" String="https://www.google.com" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="ID" />
+                     <PropertyValue Property="Value" Path="BusinessPartnerID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Address" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.Communication.v1.Address" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldWithUrl">
+                     <PropertyValue Property="Label" String="Link to" />
+                     <PropertyValue Property="Value" String="Google Maps" />
+                     <PropertyValue Property="Url">
+                        <Apply Function="odata.fillUriTemplate">
+                           <String>https://www.google.de/maps/place/{street},{city}</String>
+                           <LabeledElement Name="street">
+                              <Apply Function="odata.uriEncode">
+                                 <Path>Address/Street</Path>
+                              </Apply>
+                           </LabeledElement>
+                           <LabeledElement Name="city">
+                              <Apply Function="odata.uriEncode">
+                                 <Path>Address/City</Path>
+                              </Apply>
+                           </LabeledElement>
+                        </Apply>
+                     </PropertyValue>
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="ID" />
+                     <PropertyValue Property="Value" Path="BusinessPartnerID" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Company Name" />
+                     <PropertyValue Property="Value">
+                        <Apply Function="odata.concat">
+                           <Path>CompanyName</Path>
+                           <String />
+                           <Path>LegalForm</Path>
+                        </Apply>
+                     </PropertyValue>
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Phone No." />
+                     <PropertyValue Property="Value" Path="PhoneNumber" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Currency" />
+                     <PropertyValue Property="Value" Path="CurrencyCode" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Role" />
+                     <PropertyValue Property="Value" Path="BusinessPartnerRole" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.Communication.v1.Address">
+               <Record Type="com.sap.vocabularies.Communication.v1.AddressType">
+                  <PropertyValue Property="street" Path="Address/Street" />
+                  <PropertyValue Property="locality" Path="Address/City" />
+                  <PropertyValue Property="code" Path="Address/PostalCode" />
+                  <PropertyValue Property="country" Path="Address/Country" />
+                  <PropertyValue Property="ext">
+                     <Apply Function="odata.concat">
+                        <String>Building</String>
+                        <Path>Address/Building</Path>
+                     </Apply>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Facets">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                     <PropertyValue Property="Label" String="Contacts" />
+                     <PropertyValue Property="Target" AnnotationPath="ToContacts/@com.sap.vocabularies.UI.v1.Badge" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                     <PropertyValue Property="Label" String="Products" />
+                     <PropertyValue Property="Target" AnnotationPath="ToProducts/@com.sap.vocabularies.UI.v1.LineItem" />
+                  </Record>
+               </Collection>
+            </Annotation>
+         </Annotations>
+         <Annotations Target="GWSAMPLE_BASIC.Contact">
+            <Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo">
+               <Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+                  <PropertyValue Property="TypeName" String="Contact" />
+                  <PropertyValue Property="TypeNamePlural" String="Contacts" />
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Name" />
+                        <PropertyValue Property="Value">
+                           <Apply Function="odata.concat">
+                              <Path>FirstName</Path>
+                              <String />
+                              <Path>LastName</Path>
+                           </Apply>
+                        </PropertyValue>
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="ImageUrl" String="http://heuma.eu/wp-content/uploads/2014/02/anonymous-woman_cropped.jpeg" />
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Badge">
+               <Record Type="com.sap.vocabularies.UI.v1.BadgeType">
+                  <PropertyValue Property="HeadLine" Path="ToBusinessPartner/CompanyName" />
+                  <PropertyValue Property="Title">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Name" />
+                        <PropertyValue Property="Value">
+                           <Apply Function="odata.concat">
+                              <Path>FirstName</Path>
+                              <String />
+                              <Path>LastName</Path>
+                           </Apply>
+                        </PropertyValue>
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="MainInfo">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Phone" />
+                        <PropertyValue Property="Value" Path="PhoneNumber" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="SecondaryInfo">
+                     <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                        <PropertyValue Property="Label" String="Email" />
+                        <PropertyValue Property="Value" Path="EmailAddress" />
+                     </Record>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Identification">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataFieldForAnnotation">
+                     <PropertyValue Property="Label" String="Address" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.Communication.v1.Address" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Value" Path="ToBusinessPartner/CompanyName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Phone" />
+                     <PropertyValue Property="Value" Path="PhoneNumber" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Email" />
+                     <PropertyValue Property="Value" Path="EmailAddress" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Name" />
+                     <PropertyValue Property="Value">
+                        <Apply Function="odata.concat">
+                           <Path>FirstName</Path>
+                           <String />
+                           <Path>LastName</Path>
+                        </Apply>
+                     </PropertyValue>
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Company Name" />
+                     <PropertyValue Property="Value" Path="ToBusinessPartner/CompanyName" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Phone No." />
+                     <PropertyValue Property="Value" Path="PhoneNumber" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="Fax Number" />
+                     <PropertyValue Property="Value" Path="FaxNumber" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                     <PropertyValue Property="Label" String="E-Mail Address" />
+                     <PropertyValue Property="Value" Path="EmailAddress" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.Communication.v1.Address">
+               <Record Type="com.sap.vocabularies.Communication.v1.AddressType">
+                  <PropertyValue Property="street" Path="Address/Street" />
+                  <PropertyValue Property="locality" Path="Address/City" />
+                  <PropertyValue Property="code" Path="Address/PostalCode" />
+                  <PropertyValue Property="country" Path="Address/Country" />
+                  <PropertyValue Property="ext">
+                     <Apply Function="odata.concat">
+                        <String>Building</String>
+                        <Path>Address/Building</Path>
+                     </Apply>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.Communication.v1.Contact">
+               <Record Type="com.sap.vocabularies.Communication.v1.ContactType">
+                  <PropertyValue Property="fn">
+                     <Apply Function="odata.concat">
+                        <Path>Title</Path>
+                        <String />
+                        <Path>FirstName</Path>
+                        <String />
+                        <Path>MiddleName</Path>
+                        <String />
+                        <Path>LastName</Path>
+                     </Apply>
+                  </PropertyValue>
+                  <PropertyValue Property="n">
+                     <Record Type="com.sap.vocabularies.Communication.v1.NameType">
+                        <PropertyValue Property="surname" Path="LastName" />
+                        <PropertyValue Property="given" Path="FirstName" />
+                        <PropertyValue Property="additional" Path="MiddleName" />
+                        <PropertyValue Property="prefix" Path="Title" />
+                     </Record>
+                  </PropertyValue>
+                  <PropertyValue Property="nickname" Path="Nickname" />
+                  <PropertyValue Property="bday" Path="DateOfBirth" />
+                  <PropertyValue Property="gender" Path="Sex" />
+                  <PropertyValue Property="tel">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.Communication.v1.PhoneNumberType">
+                           <PropertyValue Property="uri" Path="PhoneNumber" />
+                           <PropertyValue Property="type" EnumMember="com.sap.vocabularies.Communication.v1.ContactInformationType/work" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+                  <PropertyValue Property="email">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.Communication.v1.EmailAddressType">
+                           <PropertyValue Property="address" Path="EmailAddress" />
+                           <PropertyValue Property="type" EnumMember="com.sap.vocabularies.Communication.v1.ContactInformationType/work com.sap.vocabularies.Communication.v1.ContactInformationType/preferred" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+                  <PropertyValue Property="adr">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.Communication.v1.AddressType">
+                           <PropertyValue Property="street" Path="Address/Street" />
+                           <PropertyValue Property="locality" Path="Address/City" />
+                           <PropertyValue Property="code" Path="Address/PostalCode" />
+                           <PropertyValue Property="country" Path="Address/Country" />
+                           <PropertyValue Property="ext">
+                              <Apply Function="odata.concat">
+                                 <String>Building</String>
+                                 <Path>Address/Building</Path>
+                              </Apply>
+                           </PropertyValue>
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.Facets">
+               <Collection>
+                  <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                     <PropertyValue Property="Label" String="Note" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.FieldGroup#Note" />
+                  </Record>
+                  <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+                     <Annotation Term="com.sap.vocabularies.UI.v1.IsSummary" />
+                     <PropertyValue Property="Label" String="Contact" />
+                     <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.FieldGroup#Contact" />
+                  </Record>
+               </Collection>
+            </Annotation>
+            <Annotation Term="com.sap.vocabularies.UI.v1.FieldGroup" Qualifier="Contact">
+               <Record Type="com.sap.vocabularies.UI.v1.FieldGroupType">
+                  <PropertyValue Property="Label" String="Contact Info" />
+                  <PropertyValue Property="Data">
+                     <Collection>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Phone" />
+                           <PropertyValue Property="Value" Path="PhoneNumber" />
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                           <PropertyValue Property="Label" String="Email" />
+                           <PropertyValue Property="Value" Path="EmailAddress" />
+                        </Record>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+         </Annotations>
+      </Schema>
+   </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" xmlns:core="sap.ui.core">
+	<!-- Example - Product ID Filter -->
+	<smartfilterbar:ControlConfiguration groupId="GlobalFilters" key="ProductID" label="Product ID (Extension)" visibleInAdvancedArea="false">
+		<smartfilterbar:customControl>
+			<Input id="ProductID" type="Text"/>
+		</smartfilterbar:customControl>
+	</smartfilterbar:ControlConfiguration>
+	<!-- Example - Sales Order ID Filter -->
+	<smartfilterbar:ControlConfiguration groupId="GlobalFilters" key="SalesOrderID" label="Sales Order ID (Extension)"
+		visibleInAdvancedArea="false">
+		<smartfilterbar:customControl>
+			<Input id="SalesOrderID" type="Text"/>
+		</smartfilterbar:customControl>
+	</smartfilterbar:ControlConfiguration>
+</core:FragmentDefinition>

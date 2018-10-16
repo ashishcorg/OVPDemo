@@ -1,0 +1,364 @@
+{
+	"_version": "1.7.0",
+	"start_url": "start.html",
+	"sap.app": {
+		"id": "demo.ovp.BusinessOverview",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{app_title}}",
+		"description": "{{app_description}}",
+		"dataSources": {
+			"GWSAMPLE_BASIC": {
+				"uri": "/here/goes/your/serviceurl/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"annotations": [
+						"annotation1"
+					],
+					"localUri": "localService/GWSAMPLE_BASIC/metadata.xml"
+				}
+			},
+			"annotation1": {
+				"type": "ODataAnnotation",
+				"uri": "localService/GWSAMPLE_BASIC/annotation1.xml",
+				"settings": {
+					"localUri": "localService/GWSAMPLE_BASIC/annotation1.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "OVP.cardtemplate",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "${sap.ui5.dist.version}",
+			"libs": {
+				"sap.ovp": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"@i18n": {
+				"preload": true,
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"GWSAMPLE_BASIC": {
+				"dataSource": "GWSAMPLE_BASIC",
+				"settings": {
+					"defaultCountMode": "Inline"
+				}
+			}
+		},
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"sap.ovp.app.Main": {
+						"controllerName": "demo.ovp.BusinessOverview.ext.custom"
+					}
+				},
+				"sap.ui.viewExtensions": {
+					"sap.ovp.app.Main": {
+						"SmartFilterBarGlobalActionExtension": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "demo.ovp.BusinessOverview.ext.customAction",
+							"type": "XML"
+						},
+						"SmartFilterBarControlConfigurationExtension|GlobalFilters": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "demo.ovp.BusinessOverview.ext.customFilter",
+							"type": "XML"
+						}
+					}
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.ovp": {
+		"globalFilterModel": "GWSAMPLE_BASIC",
+		"globalFilterEntityType": "GlobalFilters",
+		"smartVariantRequired": true,
+		"containerLayout": "resizable",
+		"enableLiveFilter": true,
+		"considerAnalyticalParameters": true,
+		"cards": {
+			"card01": {
+				"model": "GWSAMPLE_BASIC",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{card01_title}}",
+					"subTitle": "Standard List card - Standard flavour",
+					"entitySet": "ProductSet",
+					"listType": "condensed",
+					"listFlavor": "standard",
+					"sortBy": "Availability_Status",
+					"sortOrder": "Descending",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#productHeader1",
+					"addODataSelect": true,
+					"stopResizing": false,
+					"customParams": "getParameters",
+					"defaultSpan": {
+						"rows": 5,
+						"cols": 1,
+						"showOnlyHeader": false
+					}
+				}
+			},
+			"card02": {
+				"model": "GWSAMPLE_BASIC",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{card01_title}}",
+					"subTitle": "Extended List card - Standard flavour",
+					"entitySet": "ProductSet",
+					"listType": "extended",
+					"listFlavor": "standard",
+					"sortBy": "Availability_Status",
+					"sortOrder": "Descending",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#productHeader2",
+					"addODataSelect": true,
+					"stopResizing": false,
+					"defaultSpan": {
+						"rows": 5,
+						"cols": 1,
+						"showOnlyHeader": false
+					}
+				}
+			},
+			"card03": {
+				"model": "GWSAMPLE_BASIC",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{card01_title}}",
+					"subTitle": "Standard List card - Bar flavour",
+					"entitySet": "ProductSet",
+					"listType": "condensed",
+					"listFlavor": "bar",
+					"sortBy": "Availability_Status",
+					"sortOrder": "Descending",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"addODataSelect": true,
+					"stopResizing": false,
+					"defaultSpan": {
+						"rows": 5,
+						"cols": 1,
+						"showOnlyHeader": false
+					}
+				}
+			},
+			"card04": {
+				"model": "GWSAMPLE_BASIC",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{card01_title}}",
+					"subTitle": "Extended List card - Bar flavour",
+					"entitySet": "ProductSet",
+					"listType": "extended",
+					"listFlavor": "bar",
+					"sortBy": "Availability_Status",
+					"sortOrder": "Descending",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"addODataSelect": true,
+					"stopResizing": false,
+					"defaultSpan": {
+						"rows": 5,
+						"cols": 1,
+						"showOnlyHeader": false
+					}
+				}
+			},
+			"card05": {
+				"model": "GWSAMPLE_BASIC",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card05_title}}",
+					"subTitle": "{{card05_subTitle}}",
+					"entitySet": "ProductSet",
+					"addODataSelect": true,
+					"defaultSpan": {
+						"rows": 5,
+						"cols": 1
+					}
+				}
+			},
+			"card06": {
+				"model": "GWSAMPLE_BASIC",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{card06_title}}",
+					"subTitle": "{{card06_subTitle}}",
+					"entitySet": "SalesOrderSet",
+					"listType": "condensed",
+					"listFlavor": "standard",
+					"addODataSelect": false,
+					"valueSelectionInfo": "{{card06_valueSelectionInfo}}",
+					"tabs": [
+						{
+							"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#header",
+							"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+							"value": "View Switch 1"
+						},
+						{
+							"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#header",
+							"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+							"value": "View Switch 2"
+						}
+					],
+					"defaultSpan": {
+						"rows": 5,
+						"cols": 1
+					}
+				}
+			},
+			"card07": {
+				"model": "GWSAMPLE_BASIC",
+				"template": "sap.ovp.cards.linklist",
+				"settings": {
+					"title": "Quick Links",
+					"subTitle": "Most commonly used actions",
+					"listFlavor": "standard",
+					"targetUri": "https://en.wikipedia.org/wiki/Mangalyaan_2",
+					"defaultSpan": {
+						"rows": 15,
+						"cols": 1
+					},
+					"staticContent": [
+						{
+							"title": "Create Supplier",
+							"imageUri": "sap-icon://add-contact",
+							"imageAltText": "Create Supplier",
+							"semanticObject": "Action",
+							"action": "toappnavsample"
+						},
+						{
+							"title": "Create Purchase Order",
+							"imageUri": "sap-icon://sales-document",
+							"imageAltText": "Create Purchase Order",
+							"targetUri": "https://sap.com",
+							"openInNewWindow": true
+						},
+						{
+							"title": "Manage Purchase Orders",
+							"imageUri": "sap-icon://sales-order-item",
+							"imageAltText": "Manage Purchase Orders",
+							"targetUri": "https://sap.com",
+							"openInNewWindow": true
+						},
+						{
+							"title": "Manage Purchase Requisitions",
+							"imageUri": "sap-icon://list",
+							"imageAltText": "Manage Purchase Requisitions",
+							"targetUri": "https://sap.com",
+							"openInNewWindow": true
+						},
+						{
+							"title": "Create Contract",
+							"imageUri": "sap-icon://credit-card",
+							"imageAltText": "Create Contract",
+							"targetUri": "https://sap.com",
+							"openInNewWindow": true
+						},
+						{
+							"title": "Create Purchase Requisition",
+							"imageUri": "sap-icon://create-form",
+							"imageAltText": "Create Purchase Requisition",
+							"targetUri": "https://sap.com",
+							"openInNewWindow": true
+						}
+					]
+				}
+			},
+			"card08": {
+				"model": "GWSAMPLE_BASIC",
+				"template": "sap.ovp.cards.linklist",
+				"settings": {
+					"title": "Standard Dynamic Linklist Card",
+					"subTitle": "Smartlink Feature Test",
+					"listFlavor": "standard",
+					"entitySet": "ProductSet",
+					"targetUri": "https://en.wikipedia.org/wiki/Mangalyaan_2",
+					"headerAnnotationPath": "com.sap.vocabularies.UI.v1.HeaderInfo#header1",
+					"defaultSpan": {
+						"rows": 20,
+						"cols": 1
+					}
+				}
+			},
+			"card9": {
+				"model": "GWSAMPLE_BASIC",
+				"template": "sap.ovp.cards.stack",
+				"settings": {
+					"title": "{{card9_title}}",
+					"entitySet": "SalesOrderSet",
+					"subTitle": "Open orders to approve",
+					"addODataSelect": false,
+					"objectStreamCardsSettings": {
+						"annotationPath": "com.sap.vocabularies.UI.v1.Facets#stack",
+						"customActions": [
+							{
+								"text": "action 1",
+								"press": "press1",
+								"position": 1
+							},
+							{
+								"text": "action 2 ",
+								"press": "press1",
+								"position": 5
+							},
+							{
+								"text": "action 3",
+								"press": "press1",
+								"position": 10
+							},
+							{
+								"text": "action 4",
+								"press": "press1",
+								"position": 20
+							}
+						]
+					},
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#header,com.sap.vocabularies.UI.v1.Identification#card"
+				}
+			},
+			"card91": {
+				"template": "demo.ovp.BusinessOverview.ext.todo",
+				"settings": {
+					"title": "{{card91_title}}"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

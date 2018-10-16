@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" xmlns:core="sap.ui.core">
+	<Button text="Action1" press="handleCustomAction" type="Transparent"></Button>
+	<Button text="Action2" press="handleCustomAction" type="Transparent"></Button>
+</core:FragmentDefinition>
